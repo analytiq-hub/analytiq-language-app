@@ -7,6 +7,21 @@ Clone the sandbox:
 * `git clone git@github.com:analytiq-hub/analytiq-language-app.git`
 * Copy `.env_template` to `.env`, and set environment variables
 
+Set up the virtual environment:
+* On Ubuntu:
+  * `sudo apt-get install python3.9-venv`
+* On CentOS, RedHat, Fedora:
+  * `sudo dnf install python3-virtualenv``
+* `mkdir ~/.venv`
+* `python -m venv ~/.venv/analytiq`
+* `. ~/.venv/analytiq/bin/activate`
+
+Install module dependencies inside the venv:
+* `cd ~/build/analytiq-language-app`
+* `pip install torch`
+* `pip install -r requirements.txt`
+* Note: You will need to install some Linux system packages manually, for example - the python development libraries, the mysql development libraries, and possibly others. Instructions differ depending on the Linux distribution.
+
 Set up the Analytiq docstore:
 * For now, get `analytiq-docstore.tgz` from Andrei, and untar it under `~/build`. You will end up with `~/build/analytiq-docstore`, which holds the public records database.
   * TO DO: I need to create from-scratch instructions on how to create `~/build/analytiq-docstore`
