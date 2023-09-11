@@ -1,9 +1,13 @@
 # LLM App by Analytiq
 
+## Install instructions
+
+Clone the sandbox:
 * `mkdir ~/build; cd ~/build`
 * `git clone git@github.com:analytiq-hub/analytiq-language-app.git`
 * Copy `.env_template` to `.env`, and set environment variables
 
+Set up the Analytiq docstore:
 * For now, get `analytiq-docstore.tgz` from Andrei, and untar it under `~/build`. You will end up with `~/build/analytiq-docstore`, which holds the public records database.
   * TO DO: I need to create from-scratch instructions on how to create `~/build/analytiq-docstore`
 
