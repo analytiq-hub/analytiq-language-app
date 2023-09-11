@@ -1,0 +1,36 @@
+python-dotenv
+torch
+langchain
+langchain[docarray]
+llama-hub
+mysqlclient # On Ubuntu 22.04, this requires `sudo apt install python3-dev default-libmysqlclient-dev build-essential`
+openai
+pandas
+pdf2image # Required by unstructured
+pdfminer.six # Required by unstructured
+plotly
+PyPDF2 # For PDF parsing
+pypdf # For PDF parsing
+replicate
+sentence_transformers # For NLP
+streamlit
+tabulate
+unstructured
+unstructured-inference
+weaviate-client
+duckduckgo-search # For web search
+chromadb # For langchain vector store
+
+# Required by unstructured-inference
+#
+# Docs say to use the one below
+# git+https://github.com/facebookresearch/detectron2.git@57bdb21249d5418c130d54e2ebdc94dda7a4c01a
+#
+# But this one works as well
+git+https://github.com/facebookresearch/detectron2.git
+# Requires tesseract install:
+# sudo apt install tesseract-ocr
+# sudo apt install libtesseract-dev
+
+
+# To do: add langchain, airbyte, dagster dependencies
