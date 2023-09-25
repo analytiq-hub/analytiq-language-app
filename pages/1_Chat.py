@@ -19,8 +19,8 @@ from chroma_utils import (
 utils.page_init()
 
 # This should be first streamlit command called
-st.set_page_config(page_title="Chat With Files")
-st.title("Chat With Files")
+st.set_page_config(page_title="Chat With Lexington Public Records")
+st.title("Chat With Lexington Public Records")
 
 # Set up the page header
 utils.page_header()
@@ -60,7 +60,7 @@ if advanced_options:
                                 "gpt-3.5-turbo-16k"], 
                                 key="model",
                                 help="Choose a model to use for the chatbot.")
-    analytiq_search_k = st.sidebar.slider("Search K", min_value=1, max_value=10, value=2, key="analytiq_search_k",
+    analytiq_search_k = st.sidebar.slider("Search K", min_value=1, max_value=15, value=10, key="analytiq_search_k",
                                           help="Number of documents to search for.")
     analytiq_fetch_k = st.sidebar.slider("Fetch K", min_value=1, max_value=10, value=4, key="analytiq_fetch_k",
                                          help="Number of documents to fetch.")
@@ -73,7 +73,7 @@ if advanced_options:
                                                     help="Search this collection")
 else:
     model = "gpt-4"
-    analytiq_search_k = 2
+    analytiq_search_k = 10
     analytiq_fetch_k = 4
     analytiq_collection_name = "default"
 
