@@ -17,7 +17,7 @@
 
 	// Extend the PATH inside the container by adding a value. 
 	// If you only need this in the container, you can also just update the containerEnv property directly.
-	"remoteEnv": { "PATH": "${containerEnv:PATH}:/some/other/path" },
+	// "remoteEnv": { "PATH": "${containerEnv:PATH}:/some/other/path" },
 
 	// Configure tool-specific properties.
 	"customizations": {
