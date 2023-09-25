@@ -35,6 +35,7 @@ docker run \
   -e PYTHONPATH=$WORKING_DIR \
   --gpus all \
   --hostname $DOCKER_HOSTNAME \
+  --add-host $DOCKER_HOSTNAME:127.0.0.1 \
   -it \
   --name $DOCKER_CONTAINER_NAME \
   --net host \
