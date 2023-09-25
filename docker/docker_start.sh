@@ -1,9 +1,9 @@
 #!/bin/bash
 
-DOCKER_CONTAINER_NAME=ldl
-DOCKER_IMAGE=ldl
-DOCKER_HOSTNAME=ldl
-WORKING_DIR=/build/ldl
+DOCKER_CONTAINER_NAME=analytiq
+DOCKER_IMAGE=analytiq
+DOCKER_HOSTNAME=analytiq
+WORKING_DIR=/build/analytiq
 # $USER is set up by the shell
 USER_ID=$(id -u)
 GRP=$(id -g -n)
