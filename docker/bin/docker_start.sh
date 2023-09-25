@@ -3,7 +3,7 @@
 DOCKER_CONTAINER_NAME=analytiq
 DOCKER_IMAGE=analytiq
 DOCKER_HOSTNAME=analytiq
-WORKING_DIR=/build/analytiq
+WORKING_DIR=/build/analytiq-language-app
 # $USER is set up by the shell
 USER_ID=$(id -u)
 GRP=$(id -g -n)
@@ -40,7 +40,7 @@ docker run \
   --name $DOCKER_CONTAINER_NAME \
   --net host \
   --runtime=nvidia \
-  -v ~/build:/build \
+  -v ~/$WORKING_DIR:$WORKING_DIR \
   -v /home/$USER:/home/$USER \
   -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
   -w $WORKING_DIR \
