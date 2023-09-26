@@ -53,6 +53,24 @@ def init_analytiq_config(analytiq_config: dict = {}) -> None:
         json.dump({"schema_version": "1.0", "categories": categories_def}, 
                   open(fname, "w"), indent=2)
         st.info(f"Created {fname}")
+    
+    fname = f"{analytiq_docstore}/analytiq_collections.json"
+    if not os.path.exists(fname):
+        # Default collections
+        collections_def = {
+                "default": {
+                    "parser": "unstructured",
+                    "length_function": "tokens",
+                    "splitter": "CharacterTextSplitter",
+                    "chunk_size": 1000,
+                    "chunk_overlap": 100,
+                    "embedding": "all-MiniLM-L6-v2"
+                }
+            }
+
+        json.dump({"schema_version": "1.0", "collections": collections_def}, 
+                  open(fname, "w"), indent=2)
+        st.info(f"Created {fname}")
 
 def get_analytiq_config() -> dict:
     """
