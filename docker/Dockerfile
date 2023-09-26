@@ -16,6 +16,7 @@ RUN apt-get update && apt-get install -y \
 RUN apt-get install -y \
     mysql-client \
     libmysqlclient-dev \
+    python3.10-dev \
     pkgconf \
     build-essential
 
