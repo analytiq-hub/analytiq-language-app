@@ -9,9 +9,11 @@ Clone the sandbox:
 
 Set up the virtual environment:
 * On Ubuntu:
-  * `sudo apt-get install python3.9-venv`
+  * `sudo apt-get install python3.10-venv`
+  * Install all `deb` packages from `docker/Dockerfile`
 * On CentOS, RedHat, Fedora:
   * `sudo dnf install python3-virtualenv``
+  * Install all `rpm` packages corresponding to `deb` packages from `docker/Dockerfile`
 * `mkdir ~/.venv`
 * `python -m venv ~/.venv/analytiq`
 * `. ~/.venv/analytiq/bin/activate`
