@@ -12,6 +12,12 @@ RUN apt-get update && apt-get install -y \
     wget \
     zip
 
+# Install other packages
+RUN apt-get install -y \
+    mysql-server \
+    mysql-client \
+    libmysqlclient-dev
+
 RUN apt-get install -y software-properties-common \
     && add-apt-repository -y ppa:deadsnakes/ppa
 
