@@ -2,7 +2,13 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
 	"name": "Python 3.10",
-	"dockerFile": "../docker/Dockerfile",
+	"dockerComposeFile": "../docker/docker-compose.yml",
+	// The 'service' property is the name of the service for the container that VS Code should
+	// use. Update this value and .devcontainer/docker-compose.yml to the real service name.
+	"service": "analytiq",
+
+	// Comment in if you wish instead to use a single container instance with build args.
+	//"dockerFile": "../docker/Dockerfile",
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
