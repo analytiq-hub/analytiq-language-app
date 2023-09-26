@@ -12,7 +12,9 @@ Set up the Analytiq docstore:
   * TO DO: I need to create from-scratch instructions on how to create `~/build/analytiq-docstore`
 
 Create & start the ChromaDB:
-* Prerequisite: Install `docker`. TO DO: add instructions.
+* Prerequisite: Install `docker` and `docker-compose`.
+  * [Ubuntu instructions](https://docs.docker.com/engine/install/ubuntu/)
+  * [Other Linux distributions](https://docs.docker.com/engine/install/)
 * Clone the ChromaDB sandbox:
   * `cd ~/build`
   * `git clone git@github.com:chroma-core/chroma.git`
