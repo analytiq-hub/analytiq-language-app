@@ -35,3 +35,6 @@ RUN pip3 install --default-timeout=300 --verbose --no-cache-dir torch==2.0.1
 COPY requirements.txt /tmp
 RUN pip3 install --default-timeout=300 -r /tmp/requirements.txt && \
     rm -f /tmp/requirements.txt
+
+# Create the /build folder
+RUN mkdir /build

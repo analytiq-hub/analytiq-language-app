@@ -12,7 +12,7 @@
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// Torch for some reason needs to be installed before detectron
-	"postCreateCommand": "pip3 install --user torch; pip3 install --user -r requirements.txt",
+	//"postCreateCommand": "echo hi",
 
 	// Extend the PATH inside the container by adding a value. 
 	// If you only need this in the container, you can also just update the containerEnv property directly.
