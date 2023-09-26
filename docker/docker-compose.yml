@@ -20,7 +20,7 @@ services:
       - CHROMA_SERVER_AUTH_CREDENTIALS_PROVIDER=${CHROMA_SERVER_AUTH_CREDENTIALS_PROVIDER}
       - PERSIST_DIRECTORY=${PERSIST_DIRECTORY:-/chroma/chroma}
     ports:
-      - 8004:8000 # Map internal port 8000 to external port 8004 to avoid conflict
+      - 8002:8000 # Map internal port 8000 to external port 8002 to avoid conflict
     networks:
       - net
 
@@ -32,6 +32,10 @@ services:
     image: analytiq:latest
     depends_on:
       - chroma
+    environment:
+      - CHROMA_HOST=localhost
+      - CHROMA_PORT=8002
+    command: tail -f /dev/null
 
 volumes:
   backups:
