@@ -15,6 +15,7 @@ RUN apt-get update && apt-get install -y \
 # Install other packages
 RUN apt-get install -y \
     mysql-client \
+    libgl1 \
     libmysqlclient-dev \
     python3.10-dev \
     pkgconf \
