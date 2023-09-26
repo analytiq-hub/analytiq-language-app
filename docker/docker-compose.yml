@@ -1,0 +1,40 @@
+version: '3.9'
+
+networks:
+  net:
+    driver: bridge
+
+services:
+  chroma:
+    image: ghcr.io/chroma-core/chroma:latest
+    volumes:
+      # Default configuration for persist_directory in chromadb/config.py
+      # Currently it's located in "/chroma/chroma/"
+      - chroma_persistent_folder:/chroma/chroma/
+    environment:
+      - IS_PERSISTENT=TRUE
+      - ALLOW_RESET=TRUE
+      - CHROMA_SERVER_AUTH_PROVIDER=${CHROMA_SERVER_AUTH_PROVIDER}
+      - CHROMA_SERVER_AUTH_CREDENTIALS_FILE=${CHROMA_SERVER_AUTH_CREDENTIALS_FILE}
+      - CHROMA_SERVER_AUTH_CREDENTIALS=${CHROMA_SERVER_AUTH_CREDENTIALS}
+      - CHROMA_SERVER_AUTH_CREDENTIALS_PROVIDER=${CHROMA_SERVER_AUTH_CREDENTIALS_PROVIDER}
+      - PERSIST_DIRECTORY=${PERSIST_DIRECTORY:-/chroma/chroma}
+    ports:
+      - 8004:8000 # Map internal port 8000 to external port 8004 to avoid conflict
+    networks:
+      - net
+
+  analytiq:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: analytiq
+    image: analytiq:latest
+    depends_on:
+      - chroma
+
+volumes:
+  backups:
+    driver: local
+  chroma_persistent_folder:
+    driver: local
