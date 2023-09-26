@@ -33,12 +33,11 @@ services:
       - chroma
     volumes:
       - analytiq_docstore:/build/analytiq-docstore
+      - ..:/build/analytiq-language-app
     environment:
       - CHROMA_HOST=localhost
       - CHROMA_PORT=8002
       - ANALYTIQ_DOCSTORE=/build/analytiq-docstore
-    volumes:
-      - ..:/build/analytiq-language-app
     command: /bin/sh -c "cd /build/analytiq-language-app && streamlit run Analytiq.py --server.port 2001"
     # Don't use a bridge network
     network_mode: host
