@@ -39,7 +39,7 @@ services:
       - CHROMA_PORT=8002
       - ANALYTIQ_DOCSTORE=/build/analytiq-docstore
     working_dir: /build/analytiq-language-app
-    command: /bin/sh -c "streamlit run Analytiq.py --server.port 2001"
+    command: streamlit run Analytiq.py --server.port 2001
     # Don't use a bridge network
     network_mode: host
 
